@@ -1,0 +1,40 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Repository Name",
+  "description": "A plugin to connect and interact with the Science Knowledge Graph API, enabling seamless access to scholarly resources and their connections.",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "1.0.0",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Kristian",
+      "familyName": "Garza"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Kristian",
+      "familyName": "Garza"
+    }
+  ],
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "yaml"
+  },
+  "repository": {
+    "@type": "Repository",
+    "url": "https://github.com/kjgarza/science-knowledge-graph-gpt-plugin"
+  },
+  "issueTracker": "https://github.com/kjgarza/science-knowledge-graph-gpt-plugin/issues",
+  "downloadUrl": "https://github.com/kjgarza/science-knowledge-graph-gpt-plugin/archive/refs/tags/v1.0.0.zip",
+  "keywords": [
+    "science knowledge graph",
+    "graphql",
+    "plugin",
+    "research",
+    "scholarly resources"
+  ],
+  "applicationCategory": "Utilities"
+}
