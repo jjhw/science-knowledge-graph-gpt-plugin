@@ -98,47 +98,132 @@ components:
           description: The column number of the error.
 x-graphql-types:
   - name: Dataset
-    fields:
-      - name: id
-        type: ID!
-      - name: title
-        type: String!
-      # ... (other Dataset fields)
-  - name: Researcher
-    fields:
-      - name: id
-        type: ID!
-      - name: name
-        type: String!
-      # ... (other Researcher fields)
-  - name: Article
-    fields:
-      - name: id
-        type: ID!
-      - name: title
-        type: String!
-      # ... (other Article fields)
-# ... (components section)
+  - name: Work
+  - name: Software
+  - name: Organisation
+  - name: Person
+  - name: Publication
 x-graphql-queries:
-  - name: Fetch all dataset titles
+  - name: Fetch the data and the works linked to the person with ORCID ID 0000-0001-5934-7525
     query: |
       {
-        datasets {
-          title
-        }
-      }
-  - name: Fetch a researcher with their datasets and articles
-    query: |
-      {
-        researcher(id: "1") {
+        person(id: "https://orcid.org/0000-0001-5934-7525") {
+          id
           name
-          datasets {
-            title
-          }
-          articles {
-            title
+          givenName
+          familyName
+          citationCount
+          works(hasFunder: true) {
+            totalCount
+            published {
+              title
+              count
+            }
+            resourceTypes {
+              title
+              count
+            }
+            nodes {
+              id
+              type
+              titles {
+                title
+              }
+              rights {
+                rights
+              }
+              citationCount
+            }
           }
         }
       }
-# ... (components and custom extensions)
-
+  - name: Fetch all the data about the organization with ROR ID 052gg0110
+    query: |
+        {
+          organization(id: "https://ror.org/052gg0110") {
+            id
+            name
+            alternateName
+            citationCount
+            viewCount
+            downloadCount
+            works(hasViews: 100, first: 100) {
+              totalCount
+              published {
+                title
+                count
+              }
+              resourceTypes {
+                title
+                count
+              }
+              nodes {
+                id
+                type
+                publisher
+                publicationYear
+                titles {
+                  title
+                }
+                creators {
+                  id
+                  name
+                  affiliation {
+                    id
+                    name
+                  }
+                }
+                citationCount
+                viewCount
+                downloadCount
+              }
+            }
+          }
+        }
+  - name: Fetch 30 dissertations about machine learning
+    query: |
+      {
+        dissertations(query: "machine learning", first: 30) {
+          totalCount
+          published{
+            id
+            count
+          }
+          nodes {
+            id
+            publicationYear
+            publisher
+            creators {
+              id
+              name
+            }
+            titles {
+              title
+            }
+          }
+        }
+      }
+  - name: Fetch the citations of datasets that use the DOI  10.5061/dryad.234 and the citations of those citations
+    query: |
+      {
+        dataset(id: "https://doi.org/10.5061/dryad.234") {
+          id
+          titles {
+            title
+          }
+          citationCount
+          citations {
+            nodes {
+              id
+              publisher
+              titles {
+                title
+              }
+              citationCount
+            }
+          }
+        }
+      }
+  - name: Fetch  all the types in the GraphQL schema.
+    query: |
+      { __schema { types { name kind } } }
