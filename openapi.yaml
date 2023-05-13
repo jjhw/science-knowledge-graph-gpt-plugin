@@ -8,8 +8,9 @@ servers:
 paths:
   /graphql:
     post:
-      summary: Make a GraphQL query or mutation
-      description: Send a GraphQL query or mutation to the server.
+      summary: Make a GraphQL query
+      operationId: graphql_request
+      description: Send a GraphQL query to the server.
       requestBody:
         required: true
         content:
@@ -44,17 +45,17 @@ components:
       properties:
         query:
           type: string
-          description: The GraphQL query or mutation.
+          description: The GraphQL query.
         variables:
           type: object
-          description: The variables for the query or mutation.
+          description: The variables for the query.
           additionalProperties: true
     GraphQLResponse:
       type: object
       properties:
         data:
           type: object
-          description: The result of the query or mutation.
+          description: The result of the query.
           additionalProperties: true
         errors:
           type: array
