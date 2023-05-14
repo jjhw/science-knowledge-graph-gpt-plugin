@@ -12,7 +12,8 @@
     "url": "http://localhost:8065/graphql-openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "https://datacite.org/assets/DataCite-Logo_Schwoop.png",
+  "logo_url": "https://github.com/kjgarza/science-knowledge-graph-gpt-plugin/blob/master/science_graph_logo.png",
   "contact_email": "kj.garza@gmail.com",
   "legal_info_url": "https://github.com/kjgarza/science-knowledge-graph-gpt-plugin/blob/master/LICENSE"
 }
+
