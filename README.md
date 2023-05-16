@@ -1,7 +1,7 @@
 
 # Science Knowledge Graph GPT Plugin
 
-![logo](https://github.com/kjgarza/science-knowledge-graph-gpt-plugin/blob/master/science_graph_logo.png)
+![logo](https://github.com/kjgarza/science-knowledge-graph-gpt-plugin/blob/master/logo.png)
 
 A plugin to connect and interact with the Science Knowledge Graph API, enabling seamless access to scholarly resources and their connections such as researchers, datasets, organizations, funders, publications, and citations.
 
