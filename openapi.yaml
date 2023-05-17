@@ -4,7 +4,7 @@ info:
   description: An API to manage datasets, researchers, and articles using GraphQL.
   version: 1.0.0
 servers:
-  - url: https://api.stage.datacite.org
+  - url: https://api.datacite.org
 paths:
   /graphql:
     post:

@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://api.stage.datacite.org/graphql-openapi.yaml",
+    "url": "https://api.datacite.org/graphql-openapi.yaml",
     "is_user_authenticated": false
   },
   "logo_url": "https://raw.githubusercontent.com/kjgarza/science-knowledge-graph-gpt-plugin/master/logo.png",
